@@ -276,8 +276,3 @@ for (let i = 0; i < array3.length; i++) {
 }
 
 console.log(newArray);
-
-
-
-
-
