@@ -63,6 +63,7 @@ function contarOcurrencias(array, valor) {
     } else if (isNaN(valor)) {
         throw new Error(`El valor ${valor} no es un número. En realidad su tipo es ${typeof(valor)}.`);
     }
+    
     let count = 0;
     
     for (let i = 0; i < array.length; i++) {
@@ -84,8 +85,16 @@ function concatenarArrays(array1, array2) {
         return array1;
     }
 
-    return array1.concat(array2);
+    let newArray = [];
+    for (let i = 0; i < array1.length; i++) {
+        newArray.push(array1[i]);
+    }
+    for (let i = 0; i < array2.length; i++) {
+        newArray.push(array2[i]);
+    }
+    return newArray;
 }
+
 
 function encontrarMinimo(array) {
     if (array.length === 0) {
@@ -148,7 +157,7 @@ function verificarElemento(array, elemento) {
     for (let i = 0; i < array.length; i++) {
         if (array[i] === elemento) {
             console.log(`El elemento ${elemento} existe en el array.`);
-            return;
+            return undefined;
         }
     }
     
@@ -180,7 +189,16 @@ function contarMayores(array, valor) {
 let array1 = [1, 3, 5];
 let array2 = [2, 4, 6];
 
-let newArray = array1.concat(array2);
+let newArray = [];
+
+for (let i = 0; i < array1.length; i++) {
+    newArray.push(array1[i]);
+}
+
+for (let i = 0; i < array2.length; i++) {
+    newArray.push(array2[i]);
+}
+
 newArray.sort();
 
 console.log(newArray);
